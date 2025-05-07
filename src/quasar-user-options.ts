@@ -1,7 +1,7 @@
 import { Dialog, Loading, Meta, Notify } from 'quasar';
 import lang from 'quasar/lang/es';
 
-import './ui/styles/quasar.scss';
+import './styles/quasar.scss';
 import '@quasar/extras/material-icons/material-icons.css';
 
 export default {
