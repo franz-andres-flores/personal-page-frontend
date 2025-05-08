@@ -36,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "contact",
     component: () => import('@/ui/layouts/contact/ContactView.vue'),
   },
+  {
+    path: "/sign-in",
+    name: "sign-in",
+    component: () => import('@/ui/layouts/login/LoginView.vue'),
+  }
 ];
 
 const router = createRouter({

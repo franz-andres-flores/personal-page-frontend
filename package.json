@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@quasar/extras": "^1.0.0",
+    "axios": "^1.9.0",
     "core-js": "^3.8.3",
     "quasar": "^2.16.0",
     "vue": "^3.2.13",
