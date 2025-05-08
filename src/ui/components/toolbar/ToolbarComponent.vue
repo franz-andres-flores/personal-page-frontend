@@ -29,6 +29,7 @@ export default defineComponent({
         });
 
         const changeOption = (option: string) => {
+            config.option = option;
             switch (option) {
                 case 'home':
                     return router.push(`/`);
