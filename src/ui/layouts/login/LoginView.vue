@@ -36,4 +36,4 @@ import LoginView from './LoginView';
 export default LoginView;
 </script>
 
-<!-- <style lang="scss" src="./LoginView.scss"></style> -->
+<style lang="scss" src="./LoginView.scss"></style>

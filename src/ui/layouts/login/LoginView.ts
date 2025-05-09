@@ -13,7 +13,6 @@ export default defineComponent({
         const formSignin = reactive({
             email: '',
             password: '',
-            // rememberMe: false
         });
 
         const formSigninAux = reactive({

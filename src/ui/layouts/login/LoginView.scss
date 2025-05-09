@@ -1,0 +1,22 @@
+.signin-layout {
+    &-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+    }
+
+    &-title {
+        text-align: center;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin: 5% 0px;
+        font-weight: 500;
+        color: var(--q-primary);
+    }
+
+    &-rememberMe {
+        color: var(--q-primary);
+        font-weight: 600;
+    }
+}
