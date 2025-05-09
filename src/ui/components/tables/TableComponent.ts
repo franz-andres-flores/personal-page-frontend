@@ -4,7 +4,7 @@ import { QTableProps } from 'node_modules/quasar/dist/types/index';
 
 import { TableProps } from './interfaces/table-props.interface';
 import { TableData } from './interfaces/table-data.interface';
-import { getAdministratorFromLocalStorage } from "@/helpers/utilities";
+import { getUserFromLocalStorage } from "@/helpers/utilities";
 import { TableStyle } from './enums/type-style';
 import DatePickerComponent from '../datepickers/DatePickerComponent.vue';
 
@@ -159,7 +159,7 @@ export default defineComponent({
         }
 
         const emitIsActive = (props) => {
-            if (props.isAdminTable && props.id == getAdministratorFromLocalStorage().id) {
+            if (props.isAdminTable && props.id == getUserFromLocalStorage().id) {
                 emit('delete-admin', null);
                 return;
             }

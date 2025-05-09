@@ -2,10 +2,9 @@ import { defineComponent, onMounted, provide, reactive, toRefs } from "vue";
 import { useQuasar } from 'quasar';
 import { QTableProps } from 'node_modules/quasar/dist/types/index';
 
-import UserFormComponent from "@/ui/views/user/components/user-form/UserFormComponent.vue";
+import UserFormComponent from "@/ui/pages/user/views/user-list/UserListView.vue";
 import { OptionDto, RowUserDto, SearchDto, UpdateUserDto } from "@/dto";
 import { errorNotify, successNotify, verifyFilters } from "@/helpers/utilities";
-import UserCourseFormComponent from "@/ui/views/user/components/user-course-form/UserCourseFormComponent.vue";
 import { ExportField } from "@/ui/components/modals/export/interfaces/export-fields";
 import userService from "@/services/user.service";
 import { formatRowUserDto } from "@/helpers/formats";
@@ -15,7 +14,6 @@ export default defineComponent({
     name: 'UserListView',
     components: {
         UserFormComponent,
-        UserCourseFormComponent
     },
     setup() {
         const userForm = reactive({

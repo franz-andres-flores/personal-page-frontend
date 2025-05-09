@@ -2,7 +2,7 @@ import { defineComponent, onMounted, reactive, toRefs } from "vue";
 
 import router from "@/router";
 import { MenuDto } from "@/dto";
-import { getAdministratorFromLocalStorage, getCurrentDateForDashboard } from "@/helpers/utilities";
+import { getUserFromLocalStorage, getCurrentDateForDashboard } from "@/helpers/utilities";
 
 export default defineComponent({
     name: 'DashboardView',
@@ -19,13 +19,13 @@ export default defineComponent({
         ];
 
         const config = reactive({
-            admin: getAdministratorFromLocalStorage(),
+            admin: getUserFromLocalStorage(),
             leftDrawerOpen: false,
             miniState: true,
             drawer: false,
-            administrator: getAdministratorFromLocalStorage(),
+            administrator: getUserFromLocalStorage(),
             menus: [] as MenuDto[],
-            profile_uri: `/profile/${getAdministratorFromLocalStorage().id}`
+            profile_uri: `/profile/${getUserFromLocalStorage().id}`
         });
 
         const data = reactive({

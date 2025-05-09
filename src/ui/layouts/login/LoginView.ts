@@ -27,7 +27,7 @@ export default defineComponent({
                 const response = await authService.signIn(formSignin);   
                 if (response.token) {
                     localStorage.setItem('user', JSON.stringify(response));
-                    return router.replace({ name: "main" });
+                    return router.replace({ name: "principal" });
                 }
 
             } catch (err: any) {

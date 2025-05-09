@@ -1,6 +1,6 @@
 import { ResponseSignInDto, SearchDto } from "@/dto";
 
-export const getAdministratorFromLocalStorage = () => {
+export const getUserFromLocalStorage = () => {
     const administrator = JSON.parse(localStorage.getItem('user') ?? '{}') as ResponseSignInDto;
     return administrator;
 }

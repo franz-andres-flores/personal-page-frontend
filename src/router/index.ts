@@ -40,6 +40,26 @@ const routes: Array<RouteRecordRaw> = [
     path: "/sign-in",
     name: "sign-in",
     component: () => import('@/ui/layouts/login/LoginView.vue'),
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('@/ui/layouts/dashboard/DashboardView.vue'),
+    children: [
+      {
+        path: '/', redirect: { name: 'principal' }
+      },
+      {
+        path: '/principal',
+        name: 'principal',
+        component: () => import('@/ui/pages/principal/PrincipalView.vue')
+      },
+      {
+        path: '/user',
+        name: 'user',
+        component: () => import('@/ui/pages/user/views/user-list/UserListView.vue')
+      }
+    ]
   }
 ];
 
