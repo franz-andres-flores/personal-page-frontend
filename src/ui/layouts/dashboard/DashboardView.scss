@@ -1,0 +1,50 @@
+.dashboard-view {
+    &-header {
+        background-color: #FFF;
+    }
+
+    &-toolbar {
+        &-image-container {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+
+            >.image {
+                margin-top: 1vh;
+                margin-left: 1vw;
+                margin-bottom: 1vh;
+                width: 80px;
+            }
+        }
+
+        &-info {
+            color: var(--q-primary);
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &-account {
+        display: flex;
+
+        >.user {
+            margin-top: 10px;
+            margin-right: 15px;
+
+            >.role {
+                color: #FFF;
+            }
+        }
+
+        >.dropdown-btn {
+            padding: 10px 8px;
+        }
+    }
+
+    &-section-item {
+        margin-left: 1.30em;
+    }
+}
