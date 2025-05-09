@@ -1,0 +1,7 @@
+export enum TableStyle {
+    SERVICE='SERVICE',
+    SUBSERVICE='SUBSERVICE',
+    TAB='TAB',
+    TRACKING = 'TRACKING',
+    DISPATCH_BALLOT = 'DISPATCH_BALLOT'
+}

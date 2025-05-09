@@ -1,0 +1,29 @@
+.export-modal-component {
+    width: 450px;
+    max-width: 60vw;
+
+    .center-items {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-dropdown {
+        display: flex;
+        justify-content: center;
+
+        >button {
+            width: 100%;
+        }
+    }
+
+    &-export-btn {
+        text-align: center;
+        color: #000;
+
+        >button {
+            width: 100%;
+            background: #fff;
+            border: none;
+        }
+    }
+}

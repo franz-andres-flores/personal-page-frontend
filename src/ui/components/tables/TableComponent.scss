@@ -1,0 +1,182 @@
+.table-component {
+    &-description {
+        max-width: 250px;
+        text-align: justify;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    &-active {
+        padding: 4px 30px;
+        color: #00B69B;
+        background: #D8FFE0;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    &-inactive {
+        padding: 4px 26px;
+        color: #C70606;
+        background: #FFE5D9;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    &-true-state {
+        padding: 4px 26px;
+        color: #FFFFFF;
+        background: #2e6ca1;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    &-false-state {
+        padding: 4px 26px;
+        color: #FFFFFF;
+        background: #e47876;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    &-cell-content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 230px;
+    }
+
+    &-sticky-header {
+        max-height: 76vh;
+        max-width: 95vw;
+
+        &-dispatch-ballot {
+            max-height: 55vh;
+        }
+
+        &-subservice {
+            max-height: 58vh;
+            max-width: 98vw;
+        }
+
+        &-tab {
+            max-height: 60vh;
+        }
+
+        &-tracking {
+            max-height: 50vh;
+        }
+
+        .q-table__top,
+        .q-table__bottom,
+        thead tr:first-child th {
+            background-color: #ffffff;
+        }
+
+
+        thead tr th {
+            position: sticky;
+            z-index: 1;
+        }
+
+        thead tr:first-child th {
+            top: 0
+        }
+
+        &.q-table--loading thead tr:last-child th {
+            top: 48px
+        }
+
+        tbody {
+            scroll-margin-top: 48px
+        }
+    }
+
+    &-td-json {
+        width: 20vw;
+        max-width: 20vw;
+        margin: 0px;
+    }
+
+    &-language-json {
+        max-width: 20vw;
+        max-height: 20vh;
+        overflow: scroll;
+        margin: 0px;
+    }
+
+    &-edit-btn {
+        color: #296ca1;
+    }
+
+    &-config-btn {
+        color: #00c4cd;
+    }
+
+    &-password-btn {
+        color: #83689f;
+    }
+
+    &-historic-btn {
+        color: #58575f;
+    }
+
+    &-erase-btn {
+        color: #e47876;
+    }
+
+    &-delete-btn {
+        color: #b5182d
+    }
+
+    &-publication-btn {
+        color: #e0a430;
+    }
+  
+    &-send {
+        color: #1560bd;
+    }
+
+    &-restore {
+        color: #3cb371;
+    }
+
+    &-remove-route-btn {
+        color: #f94d00;
+    }
+
+    &-view-publications {
+        color: #303D66;
+    }
+
+}
+
+
+
+
+.table {
+    &-header-text {
+        font-weight: bolder;
+        font-size: 17px !important;
+        color: #37393A;
+        text-transform: uppercase;
+    }
+
+    &-header {
+        text-align: center;
+        background-color: var(--q-primary);
+        font-weight: bold;
+        color: #FFF;
+        font-size: 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 40px;
+        padding-top: 0px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .general-header-table {
+        height: 450px;
+    }
+}

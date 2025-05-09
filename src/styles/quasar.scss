@@ -1,3 +1,8 @@
 @import './quasar.variables.scss';
-// @import '~quasar-styl';
+@import '~quasar-styl';
 // @import '~quasar-addon-styl';
+
+.container {
+    width: 98%;
+    margin: auto;
+}

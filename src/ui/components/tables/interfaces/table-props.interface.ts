@@ -1,0 +1,29 @@
+export interface TableProps {
+    loading?: boolean;
+    messageNotData?: string;
+    titleTable?: string;
+    isEditEnable?: boolean;
+    isEraseEnable?: boolean;
+    isDeleteEnable?: boolean;
+    isRestoreEnable?: boolean;
+    isHistoricEnable?: boolean;
+    isPublicationEnable?: boolean;
+    isBlocksEnable?: boolean;
+    isCourseEnable?: boolean;
+    isViewPublicationEnable?: boolean;
+    isUserCoursePublicationEnable?: boolean;
+    isLabelPassengerEnable?: boolean;
+    enablePagination?: boolean;
+    enableMultipleSelection?: boolean;
+    enableDragAndDrop?: boolean;
+    selectedItems?: Array<unknown>;
+    options?: Array<unknown>;
+    enableVirtualScroll?: boolean;
+    rows?: Array<unknown>;
+    columns?: Array<unknown>;
+    denseCheckboxs?: boolean;
+    tableStyle: string;
+    isAdminTable?: boolean;
+    isDetailEnable?: boolean;
+    rowKey?: string;
+}

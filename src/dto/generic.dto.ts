@@ -12,6 +12,10 @@ export interface SearchDto {
     descending?: boolean;
 }
 
+export interface SearchResponseDto {
+    total: number;
+}
+
 export interface OptionDto {
     label: string;
     value: number | string;
