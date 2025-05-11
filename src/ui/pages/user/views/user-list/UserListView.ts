@@ -2,7 +2,7 @@ import { defineComponent, onMounted, provide, reactive, toRefs } from "vue";
 import { useQuasar } from 'quasar';
 import { QTableProps } from 'node_modules/quasar/dist/types/index';
 
-import UserFormComponent from "@/ui/pages/user/views/user-list/UserListView.vue";
+import UserFormComponent from "@/ui/pages/user/components/user-form/UserFormComponent.vue";
 import { OptionDto, RowUserDto, SearchDto, UpdateUserDto } from "@/dto";
 import { errorNotify, successNotify, verifyFilters } from "@/helpers/utilities";
 import { ExportField } from "@/ui/components/modals/export/interfaces/export-fields";
@@ -19,12 +19,6 @@ export default defineComponent({
         const userForm = reactive({
             toggleFormModal: false,
             user: {} as RowUserDto
-        });
-
-
-        const userCourseForm = reactive({
-            toggleUserCourseFormModal: false,
-            idUser: 0
         });
 
         const userConfirmModal = reactive({
@@ -143,15 +137,6 @@ export default defineComponent({
             searchUser();
         }
 
-        const showUserCourseForm = (row: RowUserDto) => {
-            userCourseForm.idUser = row.id;
-            userCourseForm.toggleUserCourseFormModal = true;
-        }
-
-        const closeUserCourseForm = () => {
-            userCourseForm.toggleUserCourseFormModal = false;
-        }
-
         const showExportModal = () => {
             userExport.toggleExportModal = true;
         }
@@ -232,7 +217,6 @@ export default defineComponent({
 
         return {
             ...toRefs(userForm),
-            ...toRefs(userCourseForm),
             ...toRefs(userSearcher),
             ...toRefs(columnsOrder),
             ...toRefs(userTable),
@@ -251,8 +235,6 @@ export default defineComponent({
             showConfirmModal,
             closeConfirmModal,
             updateActiveUser,
-            showUserCourseForm,
-            closeUserCourseForm,
             showExportModal,
             closeExportModal,
             exportUsers

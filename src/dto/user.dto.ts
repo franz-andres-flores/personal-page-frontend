@@ -1,11 +1,13 @@
 import { User } from "@/entities";
 import { SearchResponseDto } from "./generic.dto";
+import { UserRole } from "@/helpers/enum";
 
 export interface CreateUserDto {
     firstName: string;
     lastName: string;
     email: string;
     password: string;
+    role: UserRole;
 }
 
 export interface UpdateUserDto extends CreateUserDto {

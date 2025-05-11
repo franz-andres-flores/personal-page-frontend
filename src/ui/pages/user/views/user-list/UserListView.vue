@@ -29,8 +29,8 @@
             <div class="row q-pt-sm">
                 <div class="col-12">
                     <table-component :loading="loading" :isEditEnable="true" :isDeleteEnable="true"
-                        :isRestoreEnable="true" :enableVisibleColumns="true" :isCourseEnable="true" @request="onRequest"
-                        @edit="showFormUser" @confirm="showConfirmModal" @course="showUserCourseForm" />
+                        :isRestoreEnable="true" :enableVisibleColumns="true" @request="onRequest"
+                        @edit="showFormUser" @confirm="showConfirmModal" />
                 </div>
             </div>
         </div>
@@ -38,9 +38,6 @@
 
     <UserFormComponent v-if="toggleFormModal" v-model="toggleFormModal" :user="user"
         @update:toggleFormModal="closeFormUser" />
-
-    <UserCourseFormComponent v-if="toggleUserCourseFormModal" v-model="toggleUserCourseFormModal" :idUser="idUser"
-        @update:toggleFormModal="closeUserCourseForm" />
 
     <confirm-modal v-if="toggleConfirmModal" v-model="toggleConfirmModal" :message="message" :user="userRow"
         @update:toggleConfirmModal="closeConfirmModal" @update:result="updateActiveUser" />

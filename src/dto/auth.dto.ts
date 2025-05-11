@@ -10,7 +10,7 @@ export interface ResponseSignInDto {
     firstName: string;
     lastName: string;
     username: string;
-    token: string;
+    access_token: string;
     role: UserRole;
 }
 

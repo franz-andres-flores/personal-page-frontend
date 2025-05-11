@@ -2,7 +2,85 @@
 @import '~quasar-styl';
 // @import '~quasar-addon-styl';
 
+.custom-layout {
+    min-height: initial !important;
+}
+
 .container {
     width: 98%;
     margin: auto;
+}
+
+.title-header {
+    font-size: 30px;
+    margin: 15px;
+    color: var(--q-primary);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    .breadcrumb-btn {
+        cursor: pointer;
+    }
+
+    >.title {
+        color: var(--q-primary);
+        font-size: 30px;
+        margin: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    >.btn-container {
+        display: flex;
+        align-items: center;
+
+        button {
+            margin: 5px;
+        }
+    }
+}
+
+.header-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.searcher {
+    display: flex;
+    justify-content: flex-start;
+
+    >.q-gutter-md {
+        margin-right: 0.5em !important
+    }
+}
+
+.description-field {
+    max-width: 90px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+}
+
+.multimedia-center {
+    display: flex;
+    justify-content: center;
+}
+
+.multimedia-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.multimedia-right {
+    display: flex;
+    justify-content: flex-end;
 }
