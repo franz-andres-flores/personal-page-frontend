@@ -1,11 +1,12 @@
 import { computed, defineComponent, reactive, toRefs } from "vue";
 
-import { CreateJobDto, OptionDto, RowJobDto } from "@/dto";
-import { fetchCurrentYear, getUserFromLocalStorage, validationRules } from "@/helpers/utilities";
+import { CreateJobDto, OptionDto, RowJobDto, UpdateJobDto } from "@/dto";
+import { errorNotify, fetchCurrentYear, getUserFromLocalStorage, messageLoading, successNotify, validationRules } from "@/helpers/utilities";
 import MonthSelectComponent from "@/ui/components/selects/MonthSelectComponent.vue";
 import YearSelectComponent from "@/ui/components/selects/YearSelectComponent.vue";
 import { JobTechnology } from "@/entities";
-import { useQuasar } from "quasar";
+import { Loading, useQuasar } from "quasar";
+import jobService from "@/services/job.service";
 
 
 interface Props {
@@ -57,8 +58,30 @@ export default defineComponent({
             createJobDto.startYear = option.value as number;
         }
 
-        const onSubmit = () => {
-            console.log();
+        const onSubmit = async () => {
+            try {
+                Loading.show(messageLoading('Se están guardando la información del empleo'));
+               
+                if (config.isCreateAction) {
+                    await jobService.create(createJobDto);
+
+                    Loading.hide();
+                    emit('update:toggleFormModal', true);
+                    $q.notify(successNotify('Se ha guardado la información del empleo correctamente'));
+                    return;
+                }
+
+                const updateJobDto = { ...createJobDto } as UpdateJobDto;
+                await jobService.update(props.job?.id ?? 0, updateJobDto);
+
+                Loading.hide();
+                emit('update:toggleFormModal', true);
+                $q.notify(successNotify('Se ha guardado la información del empleo correctamente'));
+            } catch (error) {
+                console.log(error);
+                Loading.hide();
+                $q.notify(errorNotify('No se pudo guardar los datos del empleo'));
+            }
         }
 
         return {

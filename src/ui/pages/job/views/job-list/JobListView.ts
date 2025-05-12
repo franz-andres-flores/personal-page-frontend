@@ -7,7 +7,7 @@ import { OptionDto, RowJobDto, SearchDto, UpdateJobDto } from "@/dto";
 import { errorNotify, successNotify, verifyFilters } from "@/helpers/utilities";
 import { ExportField } from "@/ui/components/modals/export/interfaces/export-fields";
 import jobService from "@/services/job.service";
-// import { formatRowJobDto } from "@/helpers/formats";
+import { formatRowJobDto } from "@/helpers/formats";
 
 
 export default defineComponent({
@@ -54,20 +54,26 @@ export default defineComponent({
             service: 'Trabajo',
             option: 0,
             fields: [
-                { label: 'Nombres', name: 'firstName' },
-                { label: 'Apellidos', name: 'lastName' },
-                { label: 'Rol', name: 'roleLabel' },
+                { label: 'Id', name: 'id' },
+                { label: 'Empresa', name: 'company' },
+                { label: 'Cargo', name: 'position' },
+                { label: 'Mes Inicio', name: 'startMonth' },
+                { label: 'Año Inicio', name: 'startYear' },
+                { label: 'Mes Finalización', name: 'endMonth' },
+                { label: 'Año Finalización', name: 'endYear' },
+                { label: 'Descripción', name: 'description' },
+                { label: "¿Es empleo actual?", name: 'isCurrentJob' },
+                { label: "Tecnologías", name: 'technologies' },
                 { label: 'Estado', name: 'active' },
             ] as ExportField[],
             dataExport: [] as RowJobDto[],
         });
 
-
         const columnsOrder = reactive({
             columnsOrder: [
                 { name: 'id', label: 'Id', field: 'id' },
-                { name: 'firstName', label: 'Nombre', field: 'firstName' },
-                { name: 'lastName', label: 'Apellido', field: 'lastName' },
+                { name: 'company', label: 'Empresa', field: 'company' },
+                { name: 'position', label: 'Cargo', field: 'position' },
             ] as QTableProps['columns'],
         });
 
@@ -153,7 +159,7 @@ export default defineComponent({
                 }
 
                 const resultJob = await jobService.findAllExport();
-                // jobExport.dataExport = formatRowJobDto(resultJob);
+                jobExport.dataExport = formatRowJobDto(resultJob);
             } catch (error) {
                 console.log(error);
                 $q.notify(errorNotify("No se pudo exportar los empleos"));
@@ -167,7 +173,7 @@ export default defineComponent({
 
                 const result = await jobService.search(jobSearcher);
                 jobTable.pagination.rowsNumber = result.total;
-                // jobTable.rows = formatRowJobDto(result.jobs);
+                jobTable.rows = formatRowJobDto(result.jobs);
 
                 jobTable.loading = false;
             } catch (error) {

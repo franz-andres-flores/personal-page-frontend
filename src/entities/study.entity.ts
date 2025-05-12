@@ -2,8 +2,9 @@ export interface Study {
     id: number;
     institution: string;
     degree: string;
-    start_year: string;
-    end_year: string;
+    startYear: number;
+    isCurrentStudy: boolean;
+    endYear: number;
     description: string;
     certificate_path: string;
     certicate_name: string;
