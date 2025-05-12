@@ -73,7 +73,7 @@ export default defineComponent({
             } catch (error) {
                 console.log(error);
                 Loading.hide();
-                $q.notify(errorNotify('No se pudo guardar los datos del empleo'));
+                $q.notify(errorNotify('No se pudo guardar los datos del estudio'));
             }
         }
 

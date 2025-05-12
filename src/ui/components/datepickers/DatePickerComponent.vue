@@ -60,7 +60,7 @@ export default defineComponent({
             }
 
             if (props.id) {
-                emit('date_selected', {date: parseToUtcDateTime(date), id: props.id});
+                emit('date_selected', { date: parseToUtcDateTime(date), id: props.id });
             } else {
                 emit('date_selected', parseToUtcDateTime(date));
             }
