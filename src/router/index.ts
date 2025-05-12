@@ -58,6 +58,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/user',
         name: 'user',
         component: () => import('@/ui/pages/user/views/user-list/UserListView.vue')
+      },
+      {
+        path: '/job',
+        name: 'job',
+        component: () => import('@/ui/pages/job/views/job-list/JobListView.vue')
       }
     ]
   }

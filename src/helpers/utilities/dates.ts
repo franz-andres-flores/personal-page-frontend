@@ -1,6 +1,5 @@
 import moment from "moment";
 
-
 export const getCurrentDate = () => {
     return moment().format('YYYY-MM-DD');
 }
@@ -54,4 +53,27 @@ export const validateDate = (input: string): boolean => {
     }
 
     return true;
+}
+
+export const fetchMonthsOfYear = () => {
+    moment.locale('es');
+    const monthsInSpanish: string[] = moment.months();
+    return monthsInSpanish;
+}
+
+export const fetchMonthByNumber = (month: number) => {
+    const months = fetchMonthsOfYear();
+    return months[month];
+}
+
+export const fetchCurrentYear = () => {
+    return moment().year();
+}
+
+export const getYearList = (startYear: number, endYear: number): number[] => {
+    const years: number[] = [];
+    for (let year = startYear; year <= endYear; year++) {
+        years.push(year);
+    }
+    return years;
 }

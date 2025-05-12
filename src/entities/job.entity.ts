@@ -6,10 +6,11 @@ export interface Job {
     id: number;
     company: string;
     position: string;
-    start_month: string;
-    start_year: string;
-    end_month: string;
-    end_year: string;
+    startMonth: number;
+    startYear: number;
+    endMonth?: number;
+    endYear?: number;
+    isCurrentJob: boolean;    
     description: string;
     technologies: JobTechnology;
     isActive: boolean;

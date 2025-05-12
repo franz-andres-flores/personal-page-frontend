@@ -4,12 +4,13 @@ import { SearchResponseDto } from "./generic.dto";
 export interface CreateJobDto {
     company: string;
     position: string;
-    start_month: number;
-    start_year: number;
-    end_month: number;
-    end_year: number;
-    description: string;
-    technologies: JobTechnology;
+    startMonth: number;
+    startYear: number;
+    isCurrentJob: boolean;
+    description?: string;
+    technologies?: JobTechnology[];
+    endMonth?: number;
+    endYear?: number;  
 }
 
 export interface UpdateJobDto extends CreateJobDto {
@@ -22,4 +23,5 @@ export interface ResponseSearchJobDto extends SearchResponseDto {
 
 export interface RowJobDto extends Job {
     active: string;
+    startTimeLabel: string;
 }
