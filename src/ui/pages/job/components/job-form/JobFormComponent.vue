@@ -1,7 +1,7 @@
 <template>
     <q-dialog v-model="showFormModal" persistent>
         <q-card style="width: 700px; max-width: 75vw;">
-            <div class="form-passenger">
+            <div class="form-job">
                 <q-card-section>
                     <div class="text-h6">
                         <div class="header-form">

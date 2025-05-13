@@ -11,9 +11,9 @@ export interface Project {
     id: number;
     name: string;
     description: string;
-    technologies: ProjectTechnology;
-    url_repository: string;
-    images: ProjectImage;
+    technologies: ProjectTechnology[];
+    urlRepository: string;
+    images: ProjectImage[];
     isActive: boolean;
     created_at: Date | string;
     updated_at: Date | string;

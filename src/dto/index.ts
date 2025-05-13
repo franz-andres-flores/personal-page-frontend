@@ -3,5 +3,6 @@ export * from './user.dto';
 export * from './job.dto';
 export * from './study.dto';
 export * from './course.dto';
+export * from './project.dto';
 
 export * from './generic.dto';

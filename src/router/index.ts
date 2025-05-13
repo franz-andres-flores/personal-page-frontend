@@ -69,7 +69,16 @@ const routes: Array<RouteRecordRaw> = [
         name: 'study',
         component: () => import('@/ui/pages/study/views/study-list/StudyListView.vue')
       },
-      
+      {
+        path: '/course',
+        name: 'course',
+        component: () => import('@/ui/pages/courses/views/course-list/CourseListView.vue')
+      },
+      {
+        path: '/project',
+        name: 'project',
+        component: () => import('@/ui/pages/projects/views/project-list/ProjectListView.vue')
+      },
     ]
   }
 ];
