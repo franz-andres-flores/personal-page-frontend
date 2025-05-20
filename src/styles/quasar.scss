@@ -1,6 +1,5 @@
 @import './quasar.variables.scss';
 @import '~quasar-styl';
-// @import '~quasar-addon-styl';
 
 .custom-layout {
     min-height: initial !important;
@@ -83,4 +82,26 @@
 .multimedia-right {
     display: flex;
     justify-content: flex-end;
+}
+
+
+.social-icons {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 180px;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 180px;
+}
+
+.social-icons .social-link {
+    font-size: 18px;
+    text-decoration: none;
 }
