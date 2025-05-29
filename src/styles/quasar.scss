@@ -1,6 +1,10 @@
 @import './quasar.variables.scss';
 @import '~quasar-styl';
 
+body {
+    background-color: #F8F9FA;
+}
+
 .custom-layout {
     min-height: initial !important;
 }
