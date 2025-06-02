@@ -1,6 +1,6 @@
 <template>
     <q-layout>
-        <toolbar />
+        <navbar />
         <div class="education-view">
             <h1>Education</h1>
         </div>

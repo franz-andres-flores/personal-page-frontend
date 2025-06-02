@@ -1,6 +1,6 @@
 <template>
     <q-layout>
-        <toolbar />
+        <navbar />
         <div class="experience-view">
             <h1>Proyecto</h1>
         </div>

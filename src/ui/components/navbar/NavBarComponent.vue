@@ -1,15 +1,16 @@
 <template>
-    <nav class="navbar-component navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar-component navbar navbar-expand-lg ">
         <a class="q-pl-md navbar-brand" href="#">
             <img src="@/assets/images/logo/logo.png" alt="Logo" width="60" height="60" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-component-btn-menu" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation"
+            @click="toggleMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" :class="{ show: menuVisible || isDesktop }">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li v-for="(opt, index) in options" :key="index" @click="changeOption(opt.value)">
                     <button class="nav-link">{{ opt.label }}</button>
                 </li>
@@ -19,11 +20,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+import { defineComponent, onMounted, onUnmounted, reactive, toRefs } from 'vue';
 import router from '@/router';
 
 export default defineComponent({
-    name: 'ToolbarComponent',
+    name: 'NavBarComponent',
     setup() {
         const config = reactive({
             option: 'home',
@@ -35,8 +36,14 @@ export default defineComponent({
                 { label: 'Proyectos', value: 'projects' },
                 { label: 'Blog', value: 'blog' },
                 { label: 'Contáctame', value: 'contacts' },
-            ]
+            ],
+            menuVisible: false,
+            isDesktop: window.innerWidth >= 992
         });
+
+        const toggleMenu = () => {
+            config.menuVisible = !config.menuVisible;
+        }
 
         const changeOption = (option: string) => {
             config.option = option;
@@ -61,9 +68,26 @@ export default defineComponent({
             }
         }
 
+
+        const handleResize = () => {
+            config.isDesktop = window.innerWidth >= 992
+            if (config.isDesktop) {
+                config.menuVisible = false
+            }
+        }
+
+        onMounted(() => {
+            window.addEventListener('resize', handleResize);
+        })
+
+        onUnmounted(() => {
+            window.removeEventListener('resize', handleResize);
+        })
+
         return {
             ...toRefs(config),
-            changeOption
+            changeOption,
+            toggleMenu
         }
     }
 });
@@ -71,18 +95,25 @@ export default defineComponent({
 
 <style lang="scss">
 .navbar-component {
-    height: 50px;
-    max-height: 50px;
+    background-color: var(--q-primary);
+
+    .nav-link {
+        color: #fff;
+    }
+
+    &-btn-menu {
+        margin-right: 10px;
+        border: #fff;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 992px) {
     .navbar-component {
-        height: 80px;
-        max-height: 80px;
-
-        .navbar-nav {
-            background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
-        }
+        max-height: 50px;
     }
 }
 </style>

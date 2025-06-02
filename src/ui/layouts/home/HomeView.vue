@@ -3,35 +3,39 @@
         <navbar />
         <div class="home-view">
             <div class="container">
-                <ul class="social-icons pt-3">
-                    <li class="social-item">
-                        <a class="social-link text-light" href="https://www.facebook.com/franz.flores.7"
-                            target="_blank"><q-icon class="fab fa-facebook" /></a>
-                    </li>
-                    <li class="social-item">
-                        <a class="social-link text-light" href="https://x.com/franzandresflo" target="_blank">
-                            <q-icon class="fab fa-x-twitter" />
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a class="social-link text-light" href="https://github.com/franz-andres-flores" target="_blank">
-                            <q-icon class="fab fa-square-github" />
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a class="social-link text-light" href="https://linkedin.com/in/franz-flores-945441238"
-                            target="_blank">
-                            <q-icon class="fab fa-linkedin" />
-                        </a>
-                    </li>
-                </ul>
+                <div class="home-view-social-media ">
+                    <ul class="social-icons pt-3">
+                        <li class="social-item">
+                            <a class="social-link text-light" href="https://www.facebook.com/franz.flores.7"
+                                target="_blank"><q-icon class="fab fa-facebook" /></a>
+                        </li>
+                        <li class="social-item">
+                            <a class="social-link text-light" href="https://x.com/franzandresflo" target="_blank">
+                                <q-icon class="fab fa-x-twitter" />
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a class="social-link text-light" href="https://github.com/franz-andres-flores" target="_blank">
+                                <q-icon class="fab fa-square-github" />
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a class="social-link text-light" href="https://linkedin.com/in/franz-flores-945441238"
+                                target="_blank">
+                                <q-icon class="fab fa-linkedin" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
 
                 <div class="home-content">
                     <h1 class="home-title">Franz Flores</h1>
                     <h6 class="home-mono">Full Stack Developer</h6>
                     <div class="home-btns">
-                        <a class="btn btn-primary btn-separator">Ver Experiencia</a>
-                        <a class="btn btn-secondary">Ver Portafolio</a>
+                        <a class="btn btn-separator btn-lg btn-experience" @click="redirectToExperience">Ver
+                            Experiencia</a>
+                        <a class="btn btn-lg btn-experience" @click="redirectToProjects">Ver Proyectos</a>
                     </div>
                 </div>
 
@@ -67,10 +71,19 @@ export default defineComponent({
             }
         }
 
+        const redirectToExperience = () => {
+            router.push('/experience');
+        }
+
+        const redirectToProjects = () => {
+            router.push('/projects');
+        }
 
         return {
             ...toRefs(config),
-            changeOption
+            changeOption,
+            redirectToExperience,
+            redirectToProjects
         }
     }
 });
@@ -78,10 +91,27 @@ export default defineComponent({
 
 <style lang="scss">
 .home-view {
+    position: relative;
     background-color: var(--q-primary);
+    background-size: cover;
+    background-position: center;
     color: #fff;
 
-    /*social icons*/
+    .home-view::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .home-content {
+        position: relative;
+        z-index: 2;
+    }
+
     .text-light {
         color: #f8f9fa !important;
     }
@@ -91,12 +121,11 @@ export default defineComponent({
         color: #cbd3da !important;
     }
 
-    /*container*/
     .home-content {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: calc(100vh - 109px); /* changed from 83vh */
+        height: calc(100vh - 109px);
         flex-direction: column;
     }
 
@@ -124,7 +153,6 @@ export default defineComponent({
         margin-right: 10px;
     }
 
-
     &-toolbar {
         background-color: #141F2C;
 
@@ -147,5 +175,29 @@ export default defineComponent({
         margin-left: 2vw;
         background-color: #141F2C;
     }
+
+    .btn-experience {
+        background-color: #1c2434 !important;
+        color: #FFF;
+    }
+
+    .btn-experience:hover {
+        background-color: #2a3244 !important;
+        color: #fff;
+    }
 }
+
+@media (max-width: 992px) {
+    .home-view {
+        &-social-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-item {
+            margin: 0px 15px;
+        }
+    }
+}
+
 </style>

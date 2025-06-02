@@ -1,6 +1,6 @@
 <template>
     <q-layout>
-        <toolbar />
+        <navbar />
         <div class="contact-view">
             <h1>Contáctame</h1>
         </div>

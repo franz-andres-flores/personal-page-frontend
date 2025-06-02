@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import JsonExcel from "vue-json-excel3";
 import 'bootstrap';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import '@/styles/quasar.variables.scss';  
 
 import App from "./App.vue";
