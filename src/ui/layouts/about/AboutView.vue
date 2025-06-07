@@ -4,9 +4,10 @@
         <div class="about-view">
             <div class="container">
                 <div class="row q-mt-md">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-md-8 q-pa-sm">
                         <h2 class="about-view-title">
-                            Sobre mí
+                            Soy Franz Flores, <br />
+                            Desarrollador Full Stack
                         </h2>
                         <p class="about-view-paragraph">
                             Soy Ingeniero en Sistemas, especializado en desarrollo frontend con Vue 3 y Angular.
@@ -19,9 +20,24 @@
                             Me apasiona crear aplicaciones web eficientes, escalables y amigables para el usuario.
                         </p>
                     </div>
-                    <div class="col-12 col-sm-6 about-view-image">
+                    <div class="col-12 col-md-4 q-pa-sm about-view-image">
                         <img src="@/assets/images/admin/Franz.jpg" alt="Imagen Franz Andrés Flores Gallardo"
-                            height="400" />
+                            height="450" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4 q-pa-sm about-view-image">
+                        <img src="@/assets/images/skills/backend.png" alt="Imagen Franz Andrés Flores Gallardo"
+                            height="250" />
+                    </div>
+                    <div class="col-12 col-md-4 q-pa-sm about-view-image">
+                        <img src="@/assets/images/skills/db.png" alt="Imagen Franz Andrés Flores Gallardo"
+                            height="250" />
+                    </div>
+                    <div class="col-12 col-md-4 q-pa-sm about-view-image">
+                        <img src="@/assets/images/skills/frontend.png" alt="Imagen Franz Andrés Flores Gallardo"
+                            height="250" />
                     </div>
                 </div>
             </div>
@@ -43,23 +59,23 @@ export default defineComponent({
 <style lang="scss">
 .about-view {
     &-title {
-        font-family: "Roboto", "-apple-system", "Helvetica Neue";
-        font-weight: 400;
+        font-family: "Kameron";
         margin-top: 2%;
         margin-bottom: 4%;
-        font-size: 4.2rem;
+        font-size: 3.2rem;
         color: var(--q-primary) !important;
     }
 
     &-paragraph {
         text-align: justify;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: var(--q-primary) !important;
     }
 
     &-image {
         display: flex;
         justify-content: center;
+        padding-left: 10px;
     }
 
 }
